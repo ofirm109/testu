@@ -1,0 +1,128 @@
+﻿body {
+}
+
+.jumbotron {
+    margin-bottom: 0px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-image: url("https://image.freepik.com/free-photo/giant-building-with-sun_1127-400.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+h1, .lead {
+    text-align: center;
+    color: white;
+    filter: drop-shadow(5px 3px 4px black);
+}
+
+.text-muted {
+    color: red !important;
+}
+
+form, .margins {
+    margin-right: 20%;
+    margin-left: 20%;
+}
+
+
+.bacColors {
+    padding-top: 40px;
+    padding-bottom: 10px;
+    background-color: aliceblue;
+}
+
+.btn {
+    width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#relHelp {
+    text-align:center;
+}
+
+.margins h2 {
+    margin-top: 40px;
+}
+
+h2 {
+    font-size: 20pt;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.bacColors .margins h2 {
+    margin-top: 0px;
+}
+
+h4 {
+    font-size: 17pt;
+}
+
+li {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+.listImg {
+    display: inline-block;
+}
+
+.list li img {
+    width: 8%;
+}
+
+.video {
+    margin-top: 50px;
+}
+
+.col-md-4 h4, .col-md-4 p {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+.iti {
+    width:100%;
+}
+
+@media (max-width: 767px) {
+    form, .margins {
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+    .listImg {
+        display: block;
+    }
+
+    .list li img {
+        width: 40%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    li h4, li p {
+        text-align: center;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+.finish h1 {
+    color: black;
+    filter: none;
+    margin-top: 80px;
+}
+
+.finish {
+    text-align: center;
+}
