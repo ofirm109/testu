@@ -1,7 +1,31 @@
 ﻿var myvalidation = [false, false, false, false];
 
+// Parse the URL
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+
+
+
 $(document).ready(function () {
+
+    // Give the URL parameters variable names
+    var source = getParameterByName('utm_source');
+    var medium = getParameterByName('utm_medium');
+    var campaign = getParameterByName('utm_campaign');
+
+    // Put the variable names into the hidden fields in the form.
+    document.getElementsByName("utm_source").value = source;
+    document.getElementsByName("utm_medium").value = medium;
+    document.getElementsByName("utm_campaign").value = campaign;
+
+
     //fname
+    alert(source);
     $("#exampleInputFname").on('input', function () {
         var fname = $("#exampleInputFname").val();
         var fnameCount = fname.length;
