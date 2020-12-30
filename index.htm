@@ -65,6 +65,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="phone">Phone number</label>
+
                                     <input id="phone" name="phone" type="tel" class="form-control" aria-describedby="cellHelp">
                                     <!--<input type="number" class="form-control" id="exampleInputCell" aria-describedby="cellHelp">-->
                                     <small id="cellHelp" class="form-text text-muted"></small>
@@ -164,30 +165,51 @@
 
     <script src="intl-tel-input-master/build/js/intlTelInput.js"></script>
     <script>
-        var input = document.querySelector("#phone");
-        window.intlTelInput(input, {
-            // allowDropdown: false,
-            // autoHideDialCode: false,
-            // autoPlaceholder: "off",
-            // dropdownContainer: document.body,
-            // excludeCountries: ["us"],
-            // formatOnDisplay: false,
-            // geoIpLookup: function(callback) {
-            //   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-            //     var countryCode = (resp && resp.country) ? resp.country : "";
-            //     callback(countryCode);
-            //   });
-            // },
-            // hiddenInput: "full_number",
-            // initialCountry: "auto",
-            // localizedCountries: { 'de': 'Deutschland' },
-            // nationalMode: false,
-            // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
-            // placeholderNumberType: "MOBILE",
-            // preferredCountries: ['cn', 'jp'],
-            // separateDialCode: true,
-            utilsScript: "intl-tel-input-master/build/js/utils.js",
+        //var input = document.querySelector("#phone");
+        //window.intlTelInput(input, {
+        //    // allowDropdown: false,
+        //    // autoHideDialCode: false,
+        //    // autoPlaceholder: "off",
+        //    // dropdownContainer: document.body,
+        //    // excludeCountries: ["us"],
+        //    // formatOnDisplay: false,
+        //    // geoIpLookup: function(callback) {
+        //    //   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+        //    //     var countryCode = (resp && resp.country) ? resp.country : "";
+        //    //     callback(countryCode);
+        //    //   });
+        //    // },
+        //    // hiddenInput: "full_number",
+        //    // initialCountry: "auto",
+        //    // localizedCountries: { 'de': 'Deutschland' },
+        //    // nationalMode: false,
+        //    // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+        //    // placeholderNumberType: "MOBILE",
+        //    // preferredCountries: ['cn', 'jp'],
+        //    // separateDialCode: true,
+        //    utilsScript: "intl-tel-input-master/build/js/utils.js",
+        //});
+
+        $(document).ready(function () {
+
+
+            var input = document.querySelector("#phone");
+            window.intlTelInput(input, {
+                initialCountry: "auto",
+                geoIpLookup: function (callback) {
+                    $.get('https://ipinfo.io', function () { }, "ipinfo.io").always(function (resp) {
+                        var countryCode = (resp && resp.country) ? resp.country : "il";
+                        callback(countryCode);
+                    });
+                },
+                utilsScript: "intl-tel-input-master/build/js/utils.js" // just for formatting/placeholders etc
+            });
+
+
         });
+
+
+
     </script>
 </body>
 </html>
